@@ -22,10 +22,22 @@
 
 <style>
 
-img {
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: inherit;
 }
 
 </style>
@@ -43,6 +55,7 @@ var showDog = function () {
     console.log("the dog is from " + dogUrl);
 
     document.getElementsByTagName("img")[0].src = dogUrl;
+    document.getElementsByTagName("p")[0].classList.remove("hidden");
   });
 
   dogRequest.open("GET", "https://dog.ceo/api/breeds/image/random");
@@ -52,7 +65,8 @@ var showDog = function () {
 showDog();
 </script>
 
-<img>
+<p class="hidden center">courtesy of <a href="https://dog.ceo/dog-api/">dog.ceo</a></p>
+<img class="center">
 
 </body>
 </html>
